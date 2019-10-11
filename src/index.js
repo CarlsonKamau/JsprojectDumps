@@ -1,12 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let skiData = {
+    total:50,
+    powder: 20,
+    backcountry: 10,
+    goal:100
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+class SkiDayCounter extends Component{
+    render (){
+        return (
+            <section>
+                <div>
+                    <p> Total Days: {this.props.total}</p>
+                </div>
+                <div>
+                    <p> Powder Days: {this.props.powder}</p>
+                </div>
+                <div>
+                    <p> Backcountry Days : {this.props.backcountry}</p>
+                </div>
+                <div>
+                    <p> Goal: {this.props.goal}</p>
+                </div>
+            </section>
+            
+        )
+    }
+}
+
+
+ReactDOM.render(
+    <SkiDayCounter
+    total = {skiData.total}
+    powder = {skiData.total}
+    backcountry = {skiData.backcountry}
+    goal = {skiData.goal}/>,
+    document.getElementById('root'
+    )
+)
+
